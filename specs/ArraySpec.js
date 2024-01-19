@@ -1,14 +1,8 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable consistent-return */
-/* eslint-disable no-return-assign */
-/* eslint-disable no-undef */
-/* eslint-disable no-prototype-builtins */
-import { itActsAsFavoriteRestaurantModel } from './contract/favoriteRestaurantContract';
+import { itActsAsFavoriteRestaurantModel } from './contract/index';
 
 let favoriteRestaurants = [];
 
 const FavoriteRestaurantArray = {
-
   getRestaurant(id) {
     if (!id) {
       return;
@@ -39,7 +33,7 @@ const FavoriteRestaurantArray = {
 };
 
 describe('Favorite Restaurant Array Contract Test Implementation', () => {
-  afterEach(() => favoriteRestaurants = []);
+  afterEach(() => (favoriteRestaurants = []));
 
   itActsAsFavoriteRestaurantModel(FavoriteRestaurantArray);
 });

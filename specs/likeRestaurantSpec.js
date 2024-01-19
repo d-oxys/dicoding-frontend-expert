@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-resto-idb';
-import * as TesFactories from './helpers/testFactories';
+import * as TesFactories from './helpers/index';
 
 describe('Liking A Restaurant', () => {
   const addLikeButtonContainer = () => {

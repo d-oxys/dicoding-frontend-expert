@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import { itActsAsFavoriteRestaurantModel } from './contract/favoriteRestaurantContract';
+import { itActsAsFavoriteRestaurantModel } from './contract/index';
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-resto-idb';
 
 describe('Favorite Movie Idb Contract Test Implementation', () => {

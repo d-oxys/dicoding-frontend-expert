@@ -1,26 +1,32 @@
-/* eslint-disable no-undef */
-const assert = require('assert');
+const { Builder, By, until } = require('selenium-webdriver');
+const { test, expect } = require('@jest/globals');
 
-Feature('Review Restaurant');
+let driver;
 
-Before(({ I }) => {
-  I.amOnPage('/');
+beforeAll(async () => {
+  driver = await new Builder().forBrowser('MicrosoftEdge').build();
 });
 
-Scenario('Post resto review', async ({ I }) => {
-  const reviewText = 'testing';
+afterAll(async () => {
+  await driver.quit();
+});
 
-  I.waitForElement('.resto-item_content', 10);
-  I.seeElement('.resto-item_content');
+test('Post resto review', async () => {
+  await driver.get('http://localhost:9000/#/detail/vfsqv0t48jkfw1e867');
 
-  I.click(locate('.resto-item_content').first());
+  const nameInput = driver.findElement(By.id('inputName'));
+  const reviewInput = driver.findElement(By.id('inputReview'));
+  const submitButton = driver.findElement(By.id('submit-review'));
 
-  I.seeElement('.form-review form');
-  I.fillField('inputName', 'test review');
-  I.fillField('inputReview', reviewText);
-  I.click('#submit-review');
+  await nameInput.sendKeys('Test Name');
+  await reviewInput.sendKeys('Test Review');
+  await submitButton.click();
 
-  const lastReview = locate('.body-review').last();
-  const lastReviewText = await I.grabTextFrom(lastReview);
-  assert.strictEqual(reviewText, lastReviewText.trim());
+  await driver.wait(until.elementLocated(By.xpath("//*[contains(text(), 'Test Name')]")), 10000);
+
+  const namePosted = await driver.findElement(By.xpath("//*[contains(text(), 'Test Name')]")).getText();
+  const reviewPosted = await driver.findElement(By.xpath("//*[contains(text(), 'Test Review')]")).getText();
+
+  expect(namePosted).toContain('Test Name');
+  expect(reviewPosted).toContain('Test Review');
 });

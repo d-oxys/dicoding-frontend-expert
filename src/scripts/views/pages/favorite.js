@@ -7,7 +7,7 @@ const Favorite = {
     <div class="containerMain">
       <main tabindex="0" id="mainContent" class="main-resto_container">
         <section class="content">
-            <h2 tabindex="0" class="explore-restaurant__label">
+            <h2 tabindex="0" class="explore-restaurant__label__favorite">
               Favorite
             </h2>
             <h2 class="restaurant-item__not__found"></h2>

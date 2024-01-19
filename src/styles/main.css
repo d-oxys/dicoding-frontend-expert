@@ -149,6 +149,7 @@ h4 {
 }
 
 .main-resto_container {
+  margin-top: 45vh;
   width: full;
   min-height: 100vh;
 }
@@ -320,7 +321,7 @@ footer {
   display: grid;
   grid-gap: 1.545em;
   font-size: 1em;
-  margin-top: 100vh;
+  margin-top: 4rem;
   text-align: center;
 }
 
@@ -414,6 +415,7 @@ footer {
 /*explore restaurant label */
 
 .explore-restaurant__label {
+  margin-top: 100vh;
   font-size: 32px;
   font-weight: bold;
   text-align: center;
@@ -421,6 +423,21 @@ footer {
 }
 
 .explore-restaurant__label::after {
+  content: '';
+  margin-top: 16px;
+  display: block;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.explore-restaurant__label__favorite {
+  margin-top: 45vh;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.explore-restaurant__label__favorite::after {
   content: '';
   margin-top: 16px;
   display: block;
