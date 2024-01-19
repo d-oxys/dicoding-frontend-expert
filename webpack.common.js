@@ -7,11 +7,11 @@ module.exports = {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
     // sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
+ output: {
+  filename: '[name].bundle.js',
+  path: path.resolve(__dirname, 'public'),
+  clean: true,
+},
   module: {
     rules: [
       {
