@@ -154,6 +154,11 @@ h4 {
   min-height: 100vh;
 }
 
+.main-resto_containerFav {
+  width: full;
+  min-height: 100vh;
+}
+
 .main-resto_label {
   margin: auto;
   width: max-content;
@@ -430,7 +435,7 @@ footer {
 }
 
 .explore-restaurant__label__favorite {
-  margin-top: 45vh;
+  /* margin-top: 30vh; */
   font-size: 32px;
   font-weight: bold;
   text-align: center;
@@ -570,6 +575,13 @@ form {
 
 /* mainStyle */
 .containerMain {
+  min-height: 100vh;
+  margin-top: 100vh;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.containerMainFav {
   min-height: 100vh;
   margin-top: 100vh;
   margin-left: 2.5rem;

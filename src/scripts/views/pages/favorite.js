@@ -5,7 +5,7 @@ const Favorite = {
   async render() {
     return `
     <div class="containerMain">
-      <main tabindex="0" id="mainContent" class="main-resto_container">
+      <main tabindex="0" id="mainContent" class="main-resto_containerFav">
         <section class="content">
             <h2 tabindex="0" class="explore-restaurant__label__favorite">
               Favorite
